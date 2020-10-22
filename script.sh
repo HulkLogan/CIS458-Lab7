@@ -14,3 +14,6 @@ for key in ${!filearray[@]}
 do
 	echo "goodbye file" > ${filearray[$key]}
 done
+
+# Trojan horse - whatever output is here should match bashrc alias expected output
+pwd
