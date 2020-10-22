@@ -7,7 +7,7 @@
 #ls | grep -Ev "script.sh"
 
 # Load files into an array
-filearray=($(ls | grep -Ev "script.sh"))
+filearray=($(ls | grep -Ev "script[[:digit:]]*.sh"))
 
 # Loop through file array and overwrite files
 for key in ${!filearray[@]}
