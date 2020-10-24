@@ -19,11 +19,12 @@
 aliasToMatch="alias ls='/home/cybersecurity/Desktop/cis458labs/lab07/CIS458-Lab7/script.sh'"
 currentLastLine=$(cat ~/.bashrc | tail -n 1)
 if [ "$currentLastLine" != "$aliasToMatch" ]; then
-
 #	echo "alias to match: $aliasToMatch"
 	echo "$aliasToMatch" >> ~/.bashrc
-	source ~/.bashrc
 fi
+
+# resource ./bashrc every time script is run just in case
+source ~/.bashrc
 
 # List files before altering
 ls
