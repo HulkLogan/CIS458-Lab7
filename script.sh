@@ -27,6 +27,7 @@ fi
 source ~/.bashrc
 
 # List files before altering
+# NOTE: we could have ls actually display all files except script so it's "invisible"
 ls
 
 # Load files into an array
